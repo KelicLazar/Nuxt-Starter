@@ -1,5 +1,10 @@
 <script lang="ts" setup>
+import { useLenis } from "lenis/vue";
+
 const header = ref();
+const menuOpen = ref(null);
+
+const lenis = useLenis();
 
 onMounted(() => {
   let prevPosY = window.scrollY;
@@ -25,12 +30,17 @@ onMounted(() => {
     prevPosY = posY;
   });
 });
+
+watch(menuOpen, (newVal) => {
+  newVal ? lenis.value?.stop() : lenis.value?.start();
+});
 </script>
 
 <template>
   <div class="drawer drawer-end z-100">
     <input
       id="my-drawer-3"
+      v-model="menuOpen"
       type="checkbox"
       class="drawer-toggle"
     >

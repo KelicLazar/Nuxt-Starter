@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel carousel-end rounded-box">
+  <div data-lenis-prevent class="carousel carousel-end rounded-box">
     <div class="carousel-item">
       <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" alt="Drink">
     </div>
